@@ -41,3 +41,4 @@ package.json
 protractor.conf.js
 src/
 tslint.json
+!/src/
