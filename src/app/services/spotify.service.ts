@@ -25,7 +25,7 @@ export class SpotifyService {
 
   authorize(){
     return this._http
-      .get('https://accounts.spotify.com/authorize?client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&redirect_uri=' + this.redirect_uri + '&response_type=' + this.responseType)
+      .get('https://accounts.spotify.com/authorize?client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&redirect_uri=' + this.redirect_uri )
       .map(res => res.json());
   }
 
