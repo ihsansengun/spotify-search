@@ -11,13 +11,30 @@ export class SpotifyService {
     private albumsUrl: string;
     private albumUrl: string;
 
+  private token: string;
+  private client_id = 'fa9c552e96864f0f87f3504d401d5529';
+  private client_secret = '31329030847e42cdbb8c82f4e18bd45c';
+  private redirect_uri = 'https://ihsansengun.github.io/spotify-search/';
+  private responseType = 'code';
 
-    constructor(private _http: Http) {
 
 
-    }
+  constructor(private _http: Http) {
 
-    searchMusic(str: string, type = 'artist') {
+  }
+
+
+  authorize(){
+    return this._http
+      .get('https://accounts.spotify.com/authorize?client_id=' + this.client_id + '&client_secret=' + this.client_secret + '&redirect_uri=' + this.redirect_uri + '&response_type=' + this.responseType)
+      .map(res => res.json());
+  }
+
+
+
+  searchMusic(str: string, type = 'artist') {
+
+
         this.searchUrl = 'https://api.spotify.com/v1/search?query=' + str + '&offset=0&limit=20&type=' + type + '&market=US';
         return this._http.get(this.searchUrl)
             .map(res => res.json());
