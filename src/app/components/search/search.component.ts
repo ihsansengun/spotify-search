@@ -13,9 +13,7 @@ export class SearchComponent {
 
 
     constructor(private _spotifyService: SpotifyService) {
-      this._spotifyService.authorize().subscribe(res => {
-        console.log(res);
-      });
+
     }
 
 
