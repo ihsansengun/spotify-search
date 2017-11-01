@@ -11,12 +11,11 @@ export class SpotifyService {
     private albumsUrl: string;
     private albumUrl: string;
 
-  private token: string;
-  private client_id = 'fa9c552e96864f0f87f3504d401d5529';
-  private client_secret = '31329030847e42cdbb8c82f4e18bd45c';
-  private redirect_uri = 'https://ihsansengun.github.io/spotify-search/';
-  private responseType = 'code';
-
+    private token: string;
+    private client_id = 'fa9c552e96864f0f87f3504d401d5529';
+    private client_secret = '31329030847e42cdbb8c82f4e18bd45c';
+    private redirect_uri = 'https://ihsansengun.github.io/spotify-search/';
+    private responseType = 'code';
 
 
   constructor(private _http: Http) {
